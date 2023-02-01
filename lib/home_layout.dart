@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/Features/movies/presentation/bloc/movies_bloc.dart';
-import 'package:movie_app/Features/movies/presentation/screens/browse/browse_screen.dart';
-import 'package:movie_app/Features/movies/presentation/screens/home/home_screen.dart';
-import 'package:movie_app/Features/movies/presentation/screens/search/search_screen.dart';
-import 'package:movie_app/Features/movies/presentation/screens/watch_list/watch_list_screen.dart';
-import 'package:movie_app/core/injection.dart' as di;
+import 'package:movie_app/Features/movies/presentation/screens/browse/browse_view.dart';
+import 'package:movie_app/Features/movies/presentation/screens/home/home_view.dart';
+import 'package:movie_app/Features/movies/presentation/screens/search/search_view.dart';
+import 'package:movie_app/Features/movies/presentation/screens/watch_list/watch_list_view.dart';
 
 class HomeLayout extends StatefulWidget {
   const HomeLayout({Key? key}) : super(key: key);
   static const String routeName = 'homeLayout';
-
   @override
   State<HomeLayout> createState() => _HomeLayoutState();
 }
@@ -18,15 +14,11 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   int index = 0;
   List<Widget> views = [
-    BlocProvider<MoviesBloc>(
-      create: (context) => di.sl<MoviesBloc>(),
-      child: HomeScreen(),
-    ),
-    SearchScreen(),
-    BrowseScreen(),
-    WatchListScreen(),
+    HomeView(),
+    SearchView(),
+    BrowseView(),
+    WatchListView(),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
