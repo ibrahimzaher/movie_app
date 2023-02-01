@@ -7,7 +7,7 @@ class GetMovieDetailsUseCase {
   final MoviesRepository moviesRepository;
 
   GetMovieDetailsUseCase({required this.moviesRepository});
-  Future<Either<Failure, List<Movie>>> call(int movieId) async {
+  Future<Either<Failure, Movie>> call(int movieId) async {
     return moviesRepository.getMovieDetails(movieId);
   }
 }

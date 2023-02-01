@@ -8,7 +8,7 @@ class GetCategoryMoviesUseCase {
 
   GetCategoryMoviesUseCase({required this.moviesRepository});
 
-  Future<Either<Failure, List<Movie>>> call(String idCategory) async {
+  Future<Either<Failure, List<Movie>>> call(int idCategory) async {
     return moviesRepository.getCategoryMovies(idCategory);
   }
 }
