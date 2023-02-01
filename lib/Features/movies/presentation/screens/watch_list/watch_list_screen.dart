@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/app_theme.dart';
 
-class BrowseView extends StatelessWidget {
-  const BrowseView({Key? key}) : super(key: key);
+class WatchListScreen extends StatelessWidget {
+  const WatchListScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: yellowColor,
+      color: greyLightColor,
       width: double.infinity,
       height: double.infinity,
     );
